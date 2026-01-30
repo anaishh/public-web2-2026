@@ -49,8 +49,8 @@ async function main() {
       { id: 4, nombre: 'Monitor', precio: 299.99, stock: 10 },
       { id: 5, nombre: 'Webcam', precio: 89.99, stock: 25 }
     ];
-    const productosPath = path.join(dataDir, 'productos1.json');
-    await writeFile(productosPath, JSON.stringify(productos, null, 0));
+    const productosPath = path.join(dataDir, 'productos.json');
+    await writeFile(productosPath, JSON.stringify(productos, null, 2));
     console.log('   Archivo escrito:', productosPath);
 
     // 3. Leer archivo

@@ -1,0 +1,21 @@
+{
+  "name": "t2-eventos-asincronia",
+  "version": "1.0.0",
+  "description": "Ejemplos del Tema 2: Eventos y Asincronía",
+  "type": "module",
+  "scripts": {
+    "ej1": "node 01-event-loop-orden.js",
+    "ej2": "node 02-eventos-pedidos.js",
+    "ej3": "node 03-promise-allsettled.js",
+    "ej4": "node 04-abort-controller.js",
+    "ej5": "node 05-async-local-storage.js",
+    "ej6": "node 06-eventos-async-iterator.js",
+    "all": "node 01-event-loop-orden.js && node 02-eventos-pedidos.js && node 03-promise-allsettled.js"
+  },
+  "keywords": ["nodejs", "async", "events", "promises"],
+  "author": "U-TAD",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
