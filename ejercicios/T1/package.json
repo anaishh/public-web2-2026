@@ -1,0 +1,13 @@
+{
+  "name": "t1-package-analyzer",
+  "version": "1.0.0",
+  "description": "Ejercicio T1: Analizador de package.json",
+  "type": "module",
+  "scripts": {
+    "start": "node src/analyzer.js",
+    "test": "node --test src/*.test.js"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}
