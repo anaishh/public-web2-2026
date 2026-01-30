@@ -1,0 +1,26 @@
+{
+  "name": "t1-fundamentos-nodejs",
+  "version": "1.0.0",
+  "description": "Ejemplos del Tema 1: Fundamentos de Node.js",
+  "type": "module",
+  "scripts": {
+    "01": "node src/01-hello-world.js",
+    "02": "node src/02-event-loop.js",
+    "03": "node src/03-esm-modules.js",
+    "04": "node src/04-fs-promises.js",
+    "05": "node src/05-path-examples.js",
+    "06": "node src/06-os-info.js",
+    "07": "node src/07-crypto-examples.js",
+    "08": "node src/08-process-info.js",
+    "09": "node src/09-timers.js",
+    "10": "node src/10-http-server.js",
+    "dev": "node --watch --env-file=.env src/10-http-server.js",
+    "test": "node --test src/*.test.js"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "keywords": ["nodejs", "tutorial", "esm"],
+  "author": "",
+  "license": "MIT"
+}
