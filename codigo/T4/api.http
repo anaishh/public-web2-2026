@@ -1,0 +1,74 @@
+### ===========================================
+### Tema 4 - API Express 5 con Zod
+### ===========================================
+### Extensión: REST Client
+### Iniciar: npm run dev
+### ===========================================
+
+@baseUrl = http://localhost:3000
+@apiUrl = {{baseUrl}}/api
+
+### Health Check
+GET {{baseUrl}}/health
+
+### Info de la API
+GET {{apiUrl}}
+
+### GET - Listar todos los cursos
+GET {{apiUrl}}/cursos/programacion
+
+### GET - Filtrar por nivel
+GET {{apiUrl}}/cursos/programacion?nivel=basico
+
+### GET - Filtrar y ordenar
+GET {{apiUrl}}/cursos/programacion?lenguaje=javascript&orden=vistas
+
+### GET - Obtener por ID
+GET {{apiUrl}}/cursos/programacion/1
+
+### GET - Curso no existente (404)
+GET {{apiUrl}}/cursos/programacion/999
+
+### POST - Crear curso válido
+POST {{apiUrl}}/cursos/programacion
+Content-Type: application/json
+
+{
+  "titulo": "React con TypeScript",
+  "lenguaje": "javascript",
+  "nivel": "intermedio"
+}
+
+### POST - Error validación (título corto)
+POST {{apiUrl}}/cursos/programacion
+Content-Type: application/json
+
+{
+  "titulo": "AB",
+  "lenguaje": "python",
+  "nivel": "basico"
+}
+
+### PUT - Actualizar curso
+PUT {{apiUrl}}/cursos/programacion/1
+Content-Type: application/json
+
+{
+  "titulo": "JavaScript ES2025",
+  "lenguaje": "javascript",
+  "nivel": "avanzado"
+}
+
+### PATCH - Actualización parcial
+PATCH {{apiUrl}}/cursos/programacion/1
+Content-Type: application/json
+
+{
+  "vistas": 20000
+}
+
+### DELETE - Eliminar curso
+DELETE {{apiUrl}}/cursos/programacion/4
+
+### Ruta no existente
+GET {{apiUrl}}/ruta/no/existe

@@ -1,0 +1,22 @@
+{
+  "name": "t4-express-api",
+  "version": "1.0.0",
+  "description": "API REST con Express 5, Zod y ESM",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch --env-file=.env src/index.js",
+    "start": "node --env-file=.env src/index.js"
+  },
+  "engines": {
+    "node": ">=20.11.0"
+  },
+  "keywords": ["express", "api", "rest", "zod"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "zod": "^3.24.0"
+  }
+}
