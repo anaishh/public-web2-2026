@@ -1,0 +1,67 @@
+### ===========================================
+### Tema 3 - Peticiones HTTP para REST Client
+### ===========================================
+### Extensión: REST Client (humao.rest-client)
+### Servidor: npm run routing
+### ===========================================
+
+@baseUrl = http://localhost:3000
+
+### Info de la API
+GET {{baseUrl}}/
+
+### GET - Listar todos los cursos
+GET {{baseUrl}}/api/cursos
+
+### GET - Filtrar por nivel
+GET {{baseUrl}}/api/cursos?nivel=basico
+
+### GET - Filtrar y ordenar
+GET {{baseUrl}}/api/cursos?nivel=intermedio&orden=vistas
+
+### GET - Obtener curso por ID
+GET {{baseUrl}}/api/cursos/1
+
+### GET - Curso no existente (404)
+GET {{baseUrl}}/api/cursos/999
+
+### POST - Crear nuevo curso
+POST {{baseUrl}}/api/cursos
+Content-Type: application/json
+
+{
+  "titulo": "React con TypeScript",
+  "nivel": "intermedio"
+}
+
+### POST - Error de validación
+POST {{baseUrl}}/api/cursos
+Content-Type: application/json
+
+{
+  "titulo": "Curso incompleto"
+}
+
+### PUT - Actualizar curso completo
+PUT {{baseUrl}}/api/cursos/1
+Content-Type: application/json
+
+{
+  "titulo": "JavaScript ES2024",
+  "nivel": "avanzado",
+  "vistas": 20000
+}
+
+### PATCH - Actualización parcial
+PATCH {{baseUrl}}/api/cursos/2
+Content-Type: application/json
+
+{
+  "vistas": 10000
+}
+
+### DELETE - Eliminar curso
+DELETE {{baseUrl}}/api/cursos/3
+
+### Ruta no existente (404)
+GET {{baseUrl}}/api/ruta-inexistente

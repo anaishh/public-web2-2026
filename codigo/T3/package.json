@@ -1,0 +1,19 @@
+{
+  "name": "t3-http-routing",
+  "version": "1.0.0",
+  "description": "Ejemplos de HTTP y Enrutamiento con Node.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "basic": "node --watch src/01-basic-server.js",
+    "routing": "node --watch src/02-routing.js",
+    "client": "node src/03-fetch-client.js"
+  },
+  "engines": {
+    "node": ">=20.11.0"
+  },
+  "keywords": ["nodejs", "http", "routing"],
+  "author": "",
+  "license": "ISC"
+}
