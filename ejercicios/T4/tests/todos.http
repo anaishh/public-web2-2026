@@ -1,0 +1,121 @@
+### ==========================================
+### 📝 Todo API - Tests
+### ==========================================
+
+@baseUrl = http://localhost:3000/api
+@todoId = REEMPLAZAR_CON_ID_REAL
+
+### ==========================================
+### CREAR
+### ==========================================
+
+### Crear tarea simple
+POST {{baseUrl}}/todos
+Content-Type: application/json
+
+{
+  "title": "Aprender Zod",
+  "priority": "high"
+}
+
+### Crear tarea completa
+POST {{baseUrl}}/todos
+Content-Type: application/json
+
+{
+  "title": "Preparar presentación",
+  "description": "Slides para la reunión del viernes",
+  "priority": "high",
+  "dueDate": "2025-12-31T10:00:00Z",
+  "tags": ["trabajo", "urgente"]
+}
+
+### Crear con validación fallida (título muy corto)
+POST {{baseUrl}}/todos
+Content-Type: application/json
+
+{
+  "title": "ab",
+  "priority": "high"
+}
+
+### Crear con prioridad inválida
+POST {{baseUrl}}/todos
+Content-Type: application/json
+
+{
+  "title": "Tarea con prioridad rara",
+  "priority": "super-high"
+}
+
+### Crear con demasiados tags
+POST {{baseUrl}}/todos
+Content-Type: application/json
+
+{
+  "title": "Tarea con muchos tags",
+  "tags": ["uno", "dos", "tres", "cuatro", "cinco", "seis"]
+}
+
+### ==========================================
+### LISTAR Y FILTRAR
+### ==========================================
+
+### Listar todas
+GET {{baseUrl}}/todos
+
+### Filtrar por completadas
+GET {{baseUrl}}/todos?completed=true
+
+### Filtrar por pendientes
+GET {{baseUrl}}/todos?completed=false
+
+### Filtrar por prioridad alta
+GET {{baseUrl}}/todos?priority=high
+
+### Filtrar por tag
+GET {{baseUrl}}/todos?tag=trabajo
+
+### Buscar en título
+GET {{baseUrl}}/todos?search=aprender
+
+### Ordenar por fecha
+GET {{baseUrl}}/todos?sortBy=createdAt&order=asc
+
+### Ordenar por prioridad
+GET {{baseUrl}}/todos?sortBy=priority&order=desc
+
+### Combinar filtros
+GET {{baseUrl}}/todos?priority=high&completed=false&sortBy=createdAt
+
+### ==========================================
+### OBTENER, ACTUALIZAR, ELIMINAR
+### ==========================================
+
+### Obtener por ID
+GET {{baseUrl}}/todos/{{todoId}}
+
+### Obtener ID inválido
+GET {{baseUrl}}/todos/no-es-uuid
+
+### Actualizar tarea
+PUT {{baseUrl}}/todos/{{todoId}}
+Content-Type: application/json
+
+{
+  "title": "Título actualizado",
+  "priority": "low"
+}
+
+### Toggle completada
+PATCH {{baseUrl}}/todos/{{todoId}}/toggle
+
+### Eliminar tarea
+DELETE {{baseUrl}}/todos/{{todoId}}
+
+### ==========================================
+### ESTADÍSTICAS
+### ==========================================
+
+### Ver estadísticas
+GET {{baseUrl}}/todos/stats
