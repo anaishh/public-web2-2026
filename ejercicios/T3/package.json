@@ -1,0 +1,13 @@
+{
+  "name": "t3-url-shortener",
+  "version": "1.0.0",
+  "description": "Ejercicio T3: URL Shortener con HTTP nativo",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}

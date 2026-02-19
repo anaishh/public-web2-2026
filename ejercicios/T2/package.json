@@ -1,0 +1,13 @@
+{
+  "name": "t2-pizza-express",
+  "version": "1.0.0",
+  "description": "Ejercicio T2: Sistema de pedidos con EventEmitter",
+  "type": "module",
+  "scripts": {
+    "start": "node src/pizza-shop.js",
+    "test": "node --test src/*.test.js"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}
