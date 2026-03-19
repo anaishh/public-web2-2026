@@ -1,0 +1,113 @@
+### ==========================================
+### T5 - API REST MVC MongoDB
+### ==========================================
+
+@baseUrl = http://localhost:3000/api
+@contentType = application/json
+
+### ==========================================
+### HEALTH CHECK
+### ==========================================
+
+GET http://localhost:3000/health HTTP/1.1
+
+### ==========================================
+### USERS
+### ==========================================
+
+### Listar usuarios
+GET {{baseUrl}}/users HTTP/1.1
+
+### Listar con paginación
+GET {{baseUrl}}/users?page=1&limit=5 HTTP/1.1
+
+### Filtrar por rol
+GET {{baseUrl}}/users?role=admin HTTP/1.1
+
+### Obtener usuario por ID (reemplazar con ID real)
+GET {{baseUrl}}/users/507f1f77bcf86cd799439011 HTTP/1.1
+
+### Crear usuario
+POST {{baseUrl}}/users HTTP/1.1
+Content-Type: {{contentType}}
+
+{
+  "name": "Juan Pérez",
+  "email": "juan@ejemplo.com",
+  "password": "MiPassword123"
+}
+
+### Actualizar usuario
+PUT {{baseUrl}}/users/507f1f77bcf86cd799439011 HTTP/1.1
+Content-Type: {{contentType}}
+
+{
+  "name": "Juan Pérez Actualizado",
+  "role": "admin"
+}
+
+### Eliminar usuario
+DELETE {{baseUrl}}/users/507f1f77bcf86cd799439011 HTTP/1.1
+
+### ==========================================
+### TRACKS
+### ==========================================
+
+### Listar tracks
+GET {{baseUrl}}/tracks HTTP/1.1
+
+### Top tracks
+GET {{baseUrl}}/tracks/top?limit=5 HTTP/1.1
+
+### Filtrar por género
+GET {{baseUrl}}/tracks?genre=rock HTTP/1.1
+
+### Obtener track por ID
+GET {{baseUrl}}/tracks/507f1f77bcf86cd799439011 HTTP/1.1
+
+### Crear track (reemplazar artist con ID de usuario real)
+POST {{baseUrl}}/tracks HTTP/1.1
+Content-Type: {{contentType}}
+
+{
+  "title": "Mi Primera Canción",
+  "artist": "507f1f77bcf86cd799439011",
+  "duration": 210,
+  "genres": ["pop", "rock"]
+}
+
+### Registrar reproducción
+POST {{baseUrl}}/tracks/507f1f77bcf86cd799439011/play HTTP/1.1
+
+### Dar like
+POST {{baseUrl}}/tracks/507f1f77bcf86cd799439011/like HTTP/1.1
+
+### Actualizar track
+PUT {{baseUrl}}/tracks/507f1f77bcf86cd799439011 HTTP/1.1
+Content-Type: {{contentType}}
+
+{
+  "title": "Título Actualizado",
+  "genres": ["jazz"]
+}
+
+### Eliminar track
+DELETE {{baseUrl}}/tracks/507f1f77bcf86cd799439011 HTTP/1.1
+
+### ==========================================
+### STORAGE
+### ==========================================
+
+### Listar archivos
+GET {{baseUrl}}/storage HTTP/1.1
+
+### Obtener archivo por ID
+GET {{baseUrl}}/storage/507f1f77bcf86cd799439011 HTTP/1.1
+
+### Eliminar archivo
+DELETE {{baseUrl}}/storage/507f1f77bcf86cd799439011 HTTP/1.1
+
+### ==========================================
+### Para subir archivos usa curl:
+### curl -X POST http://localhost:3000/api/storage -F "file=@/ruta/imagen.jpg"
+### ==========================================

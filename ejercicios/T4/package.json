@@ -1,0 +1,17 @@
+{
+  "name": "t4-todo-api",
+  "version": "1.0.0",
+  "description": "Ejercicio T4: Todo API con Express y Zod",
+  "type": "module",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "node --watch --env-file=.env src/app.js"
+  },
+  "dependencies": {
+    "express": "^5.0.0",
+    "zod": "^3.23.0"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}

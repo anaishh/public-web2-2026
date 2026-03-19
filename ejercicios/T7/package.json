@@ -1,0 +1,20 @@
+{
+  "name": "t7-blog-auth",
+  "version": "1.0.0",
+  "description": "Ejercicio T7: Blog API con JWT",
+  "type": "module",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "node --watch --env-file=.env src/app.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^5.0.0",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^8.0.0",
+    "zod": "^3.23.0"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}
