@@ -1,0 +1,32 @@
+# Dependencias
+node_modules
+npm-debug.log
+
+# Git
+.git
+.gitignore
+
+# Entorno
+.env
+.env.*
+
+# Tests
+coverage
+*.test.js
+
+# Documentación
+README.md
+docs
+
+# Docker
+Dockerfile
+docker-compose*.yml
+.dockerignore
+
+# IDE
+.vscode
+.idea
+
+# OS
+.DS_Store
+Thumbs.db
